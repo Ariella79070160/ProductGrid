@@ -1,4 +1,11 @@
+import clsx from "clsx"
 
 
-const ProductMetadata = () => {}
+
+import { useProductDetailsContext } from "./ProductDetailsContext"
+
+
+const ProductMetadata = () => {
+ 
+}
 export default ProductMetadata
