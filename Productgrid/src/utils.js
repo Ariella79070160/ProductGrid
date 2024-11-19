@@ -44,12 +44,9 @@ export const getInventoryData = ({ product, color, size }) => {
 };
   
 export const getSelectedColorImages = ({ product, color }) => {
-    // 检查数据有效性
     if (!product?.images || !color) {
-        return []; // 如果数据无效，返回空数组
+        return [];
     }
-
-    // 按颜色筛选图片
     return product.images.filter(
         (image) => image.color.toLowerCase() === color.toLowerCase()
     );
