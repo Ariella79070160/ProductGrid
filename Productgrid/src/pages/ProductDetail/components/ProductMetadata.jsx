@@ -7,6 +7,7 @@ import Rating from '../../../components/ui/Rating'
 import AvailableColors from './AvailableColors'
 import AvailableSizes from './AvailableSizes'
 import ProductQuantity from './ProductQuantity'
+import InfoSection from './InfoSection'
 
 import { useProductDetailsContext } from '../components/ProductDetailsContext'
 import { getInventoryData } from '../../../utils'
@@ -82,22 +83,23 @@ const ProductMetadata = () => {
                 <p className="text-neutral-600">{pdDescription}</p>
             </section>
 
-            <section>
+            <section className='flex flex-col gap-4'>
                 <AvailableColors />
                 <AvailableSizes />
                 <ProductQuantity availableStock={stock}/>
                 {stock === 0 && (
-                    <div>
+                    <div className="text-xl font-semibold text-neutral-900">
                         Sorry, this item is out of stock
                     </div>
                 )}
                 <Button 
                     label='Add to Cart'
                     size={isMobileAndBelow ? 'xl' : '2xl'}
-                    isDisabled={itemQuantity===0 || stock===0}/>
+                    isDisabled={itemQuantity===0 || stock===0}
+                />
             </section>
 
-            <div>InfoAccord</div>
+            <InfoSection />
         </div>
     )
 

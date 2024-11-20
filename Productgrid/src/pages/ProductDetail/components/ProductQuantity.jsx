@@ -6,9 +6,9 @@ const ProductQuantity = ({ availableStock }) => {
     useProductDetailsContext();
 
     return(
-        <fieldset>
-            <legend>Quantity</legend>
-            <div>
+        <fieldset aria-label="Choose a color">
+            <legend className="text-sm text-neutral-500">Quantity</legend>
+            <div className="mt-4">
                 <Cart 
                     quantity={itemQuantity}
                     decrement={decrementQuantity}
